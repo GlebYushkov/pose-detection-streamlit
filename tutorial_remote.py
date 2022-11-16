@@ -862,7 +862,6 @@ class AusarVision():
         # ADD DOCUMENTATION!!!!!!!
         frame = frame.to_ndarray(format="bgr24")
         # frame = np.array(frame)
-        print(f"FRAME SHAPE: {frame.shape}")
         # Perform Pose landmark detection.
         frame, landmarks = self.detect(frame)
         # Get frame width and height.
@@ -1043,7 +1042,6 @@ class AusarVision():
         superFrame = cv2.hconcat([self.trainParams['timeFrame'], frame, self.trainParams['tutorFrame']])
         # # Get RGB superFrame.
         # superFrame = cv2.cvtColor(superFrame, cv2.COLOR_BGR2RGB)
-        print("SUPER FRAME GENERATED")
         return av.VideoFrame.from_ndarray(superFrame, format="bgr24")
 
 
@@ -1054,7 +1052,7 @@ class AusarVision():
         self.trainParams['filePath'] = os.path.join(self.trainParams['fileDir'], self.trainParams['fileName'])
         self.trainParams['poses'] = np.array(pd.read_csv(self.trainParams['filePath']))
         self.trainParams['weights'] = self.trainParams['poses'][0]
-        self.trainParams['tutorVideoPath'] = os.path.join('media', 'video', exerciseName, exerciseName + '_tutorial' + os.extsep + 'mp4')
+        self.trainParams['tutorVideoPath'] = os.path.join('media', 'video_', exerciseName + '_tutorial' + os.extsep + 'mp4')
         self.trainParams['angleFileName'] = exerciseName + '_angles' + os.extsep + 'csv'
         self.trainParams['angleFileDir']= 'exercises'
         self.trainParams['angleFilePath'] = os.path.join(self.trainParams['angleFileDir'], self.trainParams['angleFileName'])
