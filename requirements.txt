@@ -1,7 +1,7 @@
 streamlit==1.14.1
 numpy==1.23.1
 pandas==1.4.3
-cv2==4.5.3
+opencv-python==4.5.3
 av==9.2.0
 protobuf==3.20.0
 mediapipe
