@@ -1,4 +1,4 @@
-opencv-python=4.5.3.56
+opencv-python==4.5.3.56
 streamlit==1.14.1
 numpy==1.23.1
 pandas==1.4.3
